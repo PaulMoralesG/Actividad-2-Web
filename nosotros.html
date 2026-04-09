@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Aprende Curso Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        accent: {
+                            50: '#fef3c7',
+                            100: '#fde68a',
+                            200: '#fcd34d',
+                            300: '#fbbf24',
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    </style>
+</head>
+<body>
+    <!-- ESTRUCTURA: HEADER (Encabezado) -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-white/95 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo flex items-center space-x-3 group">
+                    <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-xl shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                        Aprende Curso Digital
+                    </h1>
+                </div>
+                
+                <button class="nav-toggle lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+                        id="navToggle" 
+                        aria-label="Toggle navigation"
+                        aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <nav id="mainNav" class="hidden lg:block">
+                    <ul class="flex items-center space-x-2">
+                        <li>
+                            <a href="index.html" 
+                               class="flex items-center space-x-2 px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-primary-600 hover:text-white transition-all duration-300 hover:shadow-md transform hover:-translate-y-0.5">
+                                <i class="fas fa-home"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nosotros.html" 
+                               class="active flex items-center space-x-2 px-4 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                <i class="fas fa-users"></i>
+                                <span>Nosotros</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contacto.html" 
+                               class="flex items-center space-x-2 px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:bg-gradient-to-r hover:from-primary-500 hover:to-primary-600 hover:text-white transition-all duration-300 hover:shadow-md transform hover:-translate-y-0.5">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ESTRUCTURA: MAIN (Contenido Principal) -->
+    <main>
+        <!-- ESTRUCTURA: SECTION (Hero) -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white py-12 sm:py-16">
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">Sobre Nosotros</h2>
+                    <p class="text-lg sm:text-xl text-primary-100">Conoce nuestra historia y misión</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRUCTURA: SECTION (Nuestra Historia) | Contiene ARTICLE -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <!-- ESTRUCTURA: ARTICLE (Historia) -->
+                <article class="mb-16">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-book-open text-white text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900">Nuestra Historia</h2>
+                    </div>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong class="text-primary-600">Aprende Curso Digital</strong> nace en 2026 con una visión clara: democratizar la educación 
+                            profesional y hacerla accesible para todos. Comenzamos con un equipo de expertos 
+                            apasionados por la enseñanza y la transformación digital.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Desde entonces, hemos ayudado a más de 5,000 estudiantes a adquirir nuevas habilidades y 
+                            transformar sus vidas profesionales. Nuestro compromiso es ofrecer educación de calidad, 
+                            práctica y orientada a resultados reales.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Misión y Visión -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <article class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 border border-primary-200 hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-primary-900">Misión</h2>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Proporcionar educación digital de alta calidad que capacite a las personas para desarrollar 
+                            habilidades profesionales demandadas en el mercado actual, facilitando su crecimiento 
+                            personal y profesional.
+                        </p>
+                    </article>
+
+                    <article class="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl p-8 border border-secondary-200 hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-secondary-500 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-eye text-white"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-secondary-900">Visión</h2>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ser la plataforma líder en educación digital en América Latina, reconocida por la excelencia 
+                            de nuestros cursos, el éxito de nuestros estudiantes y nuestro impacto positivo en la 
+                            comunidad educativa.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Valores -->
+                <article class="mb-16">
+                    <div class="text-center mb-12">
+                        <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                            Nuestros Principios
+                        </span>
+                        <h2 class="text-3xl font-bold text-gray-900">Nuestros Valores</h2>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="group bg-white rounded-xl p-6 border-l-4 border-primary-500 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-bullseye text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Excelencia</h3>
+                            </div>
+                            <p class="text-gray-600">Nos comprometemos a ofrecer la mejor calidad educativa en cada curso que desarrollamos.</p>
+                        </div>
+                        
+                        <div class="group bg-white rounded-xl p-6 border-l-4 border-secondary-500 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-700 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-handshake text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Compromiso</h3>
+                            </div>
+                            <p class="text-gray-600">Estamos dedicados al éxito de cada uno de nuestros estudiantes en su camino de aprendizaje.</p>
+                        </div>
+                        
+                        <div class="group bg-white rounded-xl p-6 border-l-4 border-accent-500 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-accent-400 to-accent-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-lightbulb text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Innovación</h3>
+                            </div>
+                            <p class="text-gray-600">Constantemente actualizamos nuestros métodos y contenidos para mantenerlos relevantes.</p>
+                        </div>
+                        
+                        <div class="group bg-white rounded-xl p-6 border-l-4 border-pink-500 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-star text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Accesibilidad</h3>
+                            </div>
+                            <p class="text-gray-600">Creemos que la educación de calidad debe estar al alcance de todos.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Equipo -->
+                <article class="mb-16">
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900">Nuestro Equipo</h2>
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Contamos con un equipo de 3 tutores especializados, cada uno con amplia 
+                            experiencia en su campo. Nuestros profesionales no solo enseñan teoría, sino que 
+                            comparten experiencias reales del mundo laboral.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-certificate text-primary-500 mr-2"></i>
+                            Áreas de Especialización
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700"><strong class="text-gray-900">Tecnología:</strong> Reparación de dispositivos electrónicos y móviles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700"><strong class="text-gray-900">Marketing:</strong> Estrategias digitales, redes sociales y SEO</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700"><strong class="text-gray-900">Arte y Diseño:</strong> Resina epóxica, manualidades y decoración</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Estadísticas -->
+                <article class="mb-16">
+                    <div class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary-400 rounded-full filter blur-3xl opacity-20"></div>
+                        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-400 rounded-full filter blur-3xl opacity-20"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="text-center mb-8">
+                                <h2 class="text-3xl font-bold mb-2">Nuestros Logros</h2>
+                                <p class="text-primary-200">Impacto real en la educación digital</p>
+                            </div>
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="text-center group cursor-pointer">
+                                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                                        <div class="text-4xl md:text-5xl font-bold text-secondary-300 mb-2">5,000+</div>
+                                        <div class="text-sm text-primary-100">Estudiantes Graduados</div>
+                                    </div>
+                                </div>
+                                <div class="text-center group cursor-pointer">
+                                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                                        <div class="text-4xl md:text-5xl font-bold text-secondary-300 mb-2">3</div>
+                                        <div class="text-sm text-primary-100">Cursos Disponibles</div>
+                                    </div>
+                                </div>
+                                <div class="text-center group cursor-pointer">
+                                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                                        <div class="text-4xl md:text-5xl font-bold text-secondary-300 mb-2">98%</div>
+                                        <div class="text-sm text-primary-100">Satisfacción</div>
+                                    </div>
+                                </div>
+                                <div class="text-center group cursor-pointer">
+                                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                                        <div class="text-4xl md:text-5xl font-bold text-secondary-300 mb-2">3</div>
+                                        <div class="text-sm text-primary-100">Tutores Expertos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Llamada a la acción -->
+                <article class="text-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+                    <div class="max-w-2xl mx-auto">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Listo para Empezar?</h2>
+                        <p class="text-lg text-gray-600 mb-8">Únete a miles de estudiantes que ya están transformando sus vidas</p>
+                        <a href="contacto.html" 
+                           class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-secondary-600 to-secondary-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                            <span class="relative flex items-center space-x-2">
+                                <span>Contáctanos</span>
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ESTRUCTURA: FOOTER (Pie de Página) -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2 rounded-lg">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-400">Aprende Curso Digital</h3>
+                    </div>
+                    <p class="text-gray-300">Transformando vidas a través de la educación digital profesional.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-secondary-400 mb-4 flex items-center">
+                        <i class="fas fa-address-book mr-2"></i> Contacto
+                    </h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-envelope w-5 mr-2 text-secondary-400"></i>
+                            Email: info@aprendecurso.com
+                        </li>
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-phone-alt w-5 mr-2 text-secondary-400"></i>
+                            Teléfono: +593 0997178047
+                        </li>
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-map-marker-alt w-5 mr-2 text-secondary-400"></i>
+                            Guayaquil, Ecuador
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-secondary-400 mb-4 flex items-center">
+                        <i class="fas fa-link mr-2"></i> Enlaces Rápidos
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="index.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nosotros.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Nosotros
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contacto.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2026 Aprende Curso Digital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle navigation menu
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleMenu() {
+            navToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', 
+                navToggle.classList.contains('active'));
+            document.body.style.overflow = navToggle.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            navToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on a link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when window is resized to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMenu();
+            }
+        });
+
+        // Add scroll effect to header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

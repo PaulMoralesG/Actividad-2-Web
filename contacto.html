@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Aprende Curso Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+                            800: '#1e40af', 900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac',
+                            400: '#4ade80', 500: '#10b981', 600: '#059669', 700: '#047857',
+                            800: '#065f46', 900: '#064e3b'
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#f59e0b', 500: '#d97706', 600: '#b45309', 700: '#92400e',
+                            800: '#78350f', 900: '#451a03'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans">
+    <!-- Overlay para el menú móvil -->
+    <div id="navOverlay" class="nav-overlay"></div>
+
+    <!-- ESTRUCTURA: HEADER (Encabezado) -->
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-lg">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                        Aprende Curso Digital
+                    </h1>
+                </div>
+                <button class="nav-toggle lg:hidden" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav id="mainNav" class="hidden lg:flex">
+                    <ul class="flex flex-col lg:flex-row gap-2 lg:gap-8">
+                        <li>
+                            <a href="index.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-all duration-200">
+                                <i class="fas fa-home"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nosotros.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-all duration-200">
+                                <i class="fas fa-users"></i>
+                                <span>Nosotros</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contacto.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-all duration-200">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ESTRUCTURA: MAIN (Contenido Principal) -->
+    <main class="pt-20">
+        <!-- ESTRUCTURA: SECTION (Hero) -->
+        <section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white py-20 overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-secondary-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Contáctanos</h2>
+                <p class="text-xl text-primary-100 max-w-2xl mx-auto">Estamos aquí para ayudarte. Escríbenos y te responderemos pronto.</p>
+            </div>
+        </section>
+
+        <!-- ESTRUCTURA: SECTION (Contacto) | Contiene FORM -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Formulario de Contacto -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-paper-plane text-primary-600 mr-3"></i>
+                            Envíanos un Mensaje
+                        </h2>
+                        <p class="text-gray-600 mb-6">Completa el formulario y nos pondremos en contacto contigo</p>
+                        <div id="formMessage" class="form-message mb-4" style="display: none;"></div>
+                        <form id="contactForm" action="#" method="post" class="space-y-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-user text-primary-600 mr-2"></i>Nombre Completo *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    placeholder="Tu nombre completo" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 outline-none"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-envelope text-primary-600 mr-2"></i>Correo Electrónico *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="tucorreo@ejemplo.com" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 outline-none"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-phone text-primary-600 mr-2"></i>Teléfono
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="telefono" 
+                                    name="telefono" 
+                                    placeholder="+593 999 999 999"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 outline-none"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="asunto" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-tag text-primary-600 mr-2"></i>Asunto *
+                                </label>
+                                <select id="asunto" name="asunto" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 outline-none bg-white">
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="informacion">Información sobre cursos</option>
+                                    <option value="inscripcion">Inscripción</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                    <option value="sugerencia">Sugerencias</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-comment text-primary-600 mr-2"></i>Mensaje *
+                                </label>
+                                <textarea 
+                                    id="mensaje" 
+                                    name="mensaje" 
+                                    rows="6" 
+                                    placeholder="Escribe tu mensaje aquí..."
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
+                                ></textarea>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="acepto" name="acepto" required class="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500">
+                                <label for="acepto" class="text-sm text-gray-700">
+                                    Acepto la política de privacidad y el tratamiento de mis datos
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-primary-700 hover:to-primary-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Enviar Mensaje</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Información de Contacto -->
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fas fa-info-circle text-secondary-600 mr-3"></i>
+                                Información de Contacto
+                            </h2>
+                            <p class="text-gray-600 mb-6">Encuentra todas las formas de comunicarte con nosotros</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary-500 hover:shadow-xl transition-shadow duration-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <div class="bg-gradient-to-br from-primary-400 to-primary-600 p-2.5 rounded-lg mr-3">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                Email
+                            </h3>
+                            <p class="text-gray-700 mb-2">
+                                <a href="mailto:info@aprendecurso.com" class="text-primary-600 hover:text-primary-800 hover:underline transition-colors duration-200">
+                                    info@aprendecurso.com
+                                </a>
+                            </p>
+                            <p class="text-gray-700">
+                                <a href="mailto:soporte@aprendecurso.com" class="text-primary-600 hover:text-primary-800 hover:underline transition-colors duration-200">
+                                    soporte@aprendecurso.com
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary-500 hover:shadow-xl transition-shadow duration-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <div class="bg-gradient-to-br from-secondary-400 to-secondary-600 p-2.5 rounded-lg mr-3">
+                                    <i class="fab fa-whatsapp text-white"></i>
+                                </div>
+                                WhatsApp
+                            </h3>
+                            <p class="text-gray-700">
+                                <a href="https://wa.me/5930997178047" target="_blank" class="text-secondary-600 hover:text-secondary-800 hover:underline transition-colors duration-200">
+                                    +593 0997178047
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent-400 hover:shadow-xl transition-shadow duration-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <div class="bg-gradient-to-br from-accent-400 to-accent-500 p-2.5 rounded-lg mr-3">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                Ubicación
+                            </h3>
+                            <p class="text-gray-700 font-semibold">Sede Principal de Operaciones</p>
+                            <p class="text-gray-600">Guayaquil, Guayas</p>
+                            <p class="text-gray-600">Ecuador</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-pink-500 hover:shadow-xl transition-shadow duration-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <div class="bg-gradient-to-br from-pink-400 to-pink-600 p-2.5 rounded-lg mr-3">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                Horario de Atención
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary-500 mr-2"></i>
+                                    Lunes a Viernes: 9:00 AM - 6:00 PM
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary-500 mr-2"></i>
+                                    Sábados: 10:00 AM - 2:00 PM
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    Domingos: Cerrado
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl shadow-lg p-6 border-l-4 border-primary-600">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-lg mr-3">
+                                    <i class="fas fa-share-alt text-white"></i>
+                                </div>
+                                Redes Sociales
+                            </h3>
+                            <div class="flex flex-col space-y-3">
+                                <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-primary-600 transition-colors duration-200 group">
+                                    <div class="bg-white p-2 rounded-lg group-hover:bg-primary-50 transition-colors duration-200">
+                                        <i class="fab fa-facebook-f text-blue-600"></i>
+                                    </div>
+                                    <span class="font-medium">Facebook</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-primary-600 transition-colors duration-200 group">
+                                    <div class="bg-white p-2 rounded-lg group-hover:bg-primary-50 transition-colors duration-200">
+                                        <i class="fab fa-instagram text-pink-600"></i>
+                                    </div>
+                                    <span class="font-medium">Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESTRUCTURA: SECTION (FAQ - Preguntas Frecuentes) -->
+                <section class="mt-16">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+                            <i class="fas fa-question-circle text-primary-600 mr-3"></i>
+                            Preguntas Frecuentes
+                        </h2>
+                        <p class="text-gray-600 text-lg">Encuentra respuestas rápidas a las consultas más comunes</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 border-t-4 border-primary-500">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-user-plus text-primary-600 mr-2"></i>
+                                ¿Cómo me inscribo en un curso?
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Puedes inscribirte directamente desde nuestra página de inicio seleccionando 
+                                el curso de tu interés y completando el formulario de registro.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 border-t-4 border-secondary-500">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-certificate text-secondary-600 mr-2"></i>
+                                ¿Los certificados tienen validez oficial?
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sí, todos nuestros certificados están avalados y reconocidos por instituciones 
+                                educativas competentes.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 border-t-4 border-accent-400">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-clock text-accent-500 mr-2"></i>
+                                ¿Cuánto tiempo tengo para completar un curso?
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Tienes acceso ilimitado al contenido del curso, permitiéndote aprender a tu 
+                                propio ritmo.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 border-t-4 border-pink-500">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-money-bill-wave text-pink-600 mr-2"></i>
+                                ¿Ofrecen garantía de reembolso?
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Sí, ofrecemos garantía de satisfacción de 30 días. Si no estás satisfecho, 
+                                te devolvemos tu dinero.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Llamada a la acción -->
+                <div class="mt-16 bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-12 text-center text-white shadow-2xl">
+                    <i class="fas fa-headset text-6xl mb-6 text-secondary-300"></i>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Tienes alguna duda?</h2>
+                    <p class="text-xl text-primary-100 max-w-2xl mx-auto mb-8">
+                        No dudes en contactarnos. Nuestro equipo de soporte está listo para ayudarte 
+                        con cualquier pregunta que tengas.
+                    </p>
+                    <a href="https://wa.me/5930997178047" target="_blank" class="inline-flex items-center space-x-2 bg-secondary-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-secondary-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Chatea con nosotros</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ESTRUCTURA: FOOTER (Pie de Página) -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2 rounded-lg">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-400">Aprende Curso Digital</h3>
+                    </div>
+                    <p class="text-gray-300">Transformando vidas a través de la educación digital profesional.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-secondary-400 mb-4 flex items-center">
+                        <i class="fas fa-address-book mr-2"></i> Contacto
+                    </h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-envelope w-5 mr-2 text-secondary-400"></i>
+                            Email: info@aprendecurso.com
+                        </li>
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-phone-alt w-5 mr-2 text-secondary-400"></i>
+                            Teléfono: +593 0997178047
+                        </li>
+                        <li class="flex items-center hover:text-secondary-400 transition-colors duration-200">
+                            <i class="fas fa-map-marker-alt w-5 mr-2 text-secondary-400"></i>
+                            Guayaquil, Ecuador
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-secondary-400 mb-4 flex items-center">
+                        <i class="fas fa-link mr-2"></i> Enlaces Rápidos
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="index.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nosotros.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Nosotros
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contacto.html" class="flex items-center text-gray-300 hover:text-secondary-400 transition-colors duration-200 group">
+                                <i class="fas fa-angle-right mr-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2026 Aprende Curso Digital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle navigation menu
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleMenu() {
+            navToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', 
+                navToggle.classList.contains('active'));
+            document.body.style.overflow = navToggle.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            navToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on a link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when window is resized to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMenu();
+            }
+        });
+
+        // Add scroll effect to header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Contact Form Functionality
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                asunto: document.getElementById('asunto').value,
+                mensaje: document.getElementById('mensaje').value,
+                acepto: document.getElementById('acepto').checked
+            };
+
+            // Validate
+            if (!formData.acepto) {
+                showMessage('Por favor acepta la política de privacidad', 'error');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            // Simulate sending (in production, this would be an API call)
+            setTimeout(() => {
+                // Log data to console (in production, send to backend)
+                console.log('Formulario enviado:', formData);
+
+                // Show success message
+                showMessage(
+                    `¡Gracias ${formData.nombre}! Tu mensaje ha sido enviado exitosamente. Te contactaremos pronto a ${formData.email}`,
+                    'success'
+                );
+
+                // Reset form
+                contactForm.reset();
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1500);
+        });
+
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = 'form-message ' + type;
+            formMessage.style.display = 'block';
+
+            // Hide message after 8 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 8000);
+        }
+    </script>
+</body>
+</html>
