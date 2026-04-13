@@ -176,12 +176,14 @@ ul {
         right: 0;
         height: 100vh;
         width: 280px;
-        background: white;
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
         transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1100;
         padding-top: 80px;
+        overflow-y: auto;
+        pointer-events: auto;
     }
 
     nav#mainNav.active {
@@ -192,15 +194,26 @@ ul {
     nav#mainNav ul {
         flex-direction: column;
         align-items: stretch;
-        padding: 1rem;
-        gap: 0.5rem;
+        padding: 1.5rem 1rem;
+        gap: 0.75rem;
     }
 
     nav#mainNav ul li a {
         width: 100%;
         justify-content: flex-start;
-        padding: 1rem;
+        padding: 1rem 1.25rem;
         border-radius: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    nav#mainNav ul li a:hover {
+        transform: translateX(4px);
+    }
+
+    nav#mainNav ul li a.active {
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     }
 }
 
@@ -209,13 +222,24 @@ ul {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .nav-overlay.active {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ===================================

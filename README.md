@@ -1,17 +1,84 @@
-# Aprende Curso Digital - Sitio Web
+﻿# Aprende Curso Digital - Sitio Web
 
 ## 📚 Información del Proyecto
 
 **Curso:** Desarrollo de Aplicaciones Web  
 **Universidad:** UEES (Universidad de Especialidades Espíritu Santo)  
-**Fecha:** Abril 2026  
-**Temática:** Plataforma de Educación Digital Profesional
+**Actividad:** Actividad 2 - Diseño Responsivo y Estilos Visuales  
+**Fecha:** Abril 2026
 
 ---
 
 ## 📋 Descripción
 
-Sitio web moderno y responsivo para una plataforma de educación digital, desarrollado con HTML5, CSS3, Tailwind CSS y JavaScript. Implementa las 10 heurísticas de Nielsen para una experiencia de usuario profesional.
+Sitio web moderno y responsivo para una plataforma de educación digital. Desarrollado con HTML5, CSS3, Tailwind CSS y JavaScript, implementando diseño responsivo profesional y experiencia de usuario optimizada.
+
+---
+
+## ✅ Requisitos de la Actividad 2 Implementados
+
+### 1. Flexbox y CSS Grid ✅
+- **Flexbox:** Navegación horizontal responsive, footer multi-columna
+- **CSS Grid:** Sistema de tarjetas de cursos (3→2→1 columnas), servicios (6 cards), valores corporativos
+- **Implementación:** Grid adaptable según breakpoints con `grid-template-columns`
+
+### 2. Media Queries y Diseño Responsivo ✅
+- **4 Breakpoints implementados:**
+  - **Mobile:** < 480px (1 columna, menú hamburguesa)
+  - **Tablet pequeña:** 481px - 768px (2 columnas)
+  - **Tablet/Laptop:** 769px - 1024px (contenido expandido)
+  - **Desktop:** > 1024px (3 columnas, layout completo)
+- **Mobile-first approach** con progressive enhancement
+
+### 3. Coherencia Visual y Paleta de Colores ✅
+- **Paleta personalizada de 3 colores:**
+  - Primary (Azul): `#3b82f6` - Elementos principales y CTAs
+  - Secondary (Verde): `#10b981` - Confirmaciones y éxito
+  - Accent (Naranja): `#f59e0b` - Elementos destacados
+- **Tipografía:** Google Font 'Inter' para todo el sitio
+- **Consistencia:** Mismos estilos, espaciados y componentes en las 3 páginas
+
+### 4. Nuevas Secciones Añadidas ✅
+**8 secciones nuevas agregadas:**
+1. **Hero Section** (index.html) - Banner principal con gradientes y estadísticas
+2. **Sección de Cursos** (index.html) - 3 cursos con ratings y badges
+3. **Sección de Servicios** (index.html) - 6 servicios con iconos gradient
+4. **Sección Heurísticas UX** (index.html) - 10 principios de Nielsen
+5. **Sección Valores** (nosotros.html) - 4 valores corporativos con iconos
+6. **Sección Estadísticas** (nosotros.html) - Métricas con backdrop-blur
+7. **Sección Información de Contacto** (contacto.html) - 5 tarjetas de contacto
+8. **Sección FAQ** (contacto.html) - 4 preguntas frecuentes
+
+### 5. Iconos y Recursos Gráficos ✅
+- **Font Awesome 6.5.1:** 30+ iconos profesionales
+- **Iconos implementados en:**
+  - Navegación (menú, redes sociales)
+  - Servicios (cada card con icono gradient)
+  - Valores corporativos (escudo, usuarios, objetivo, estrella)
+  - Contacto (teléfono, email, ubicación, reloj, WhatsApp)
+  - Formulario (usuario, sobre, mensaje)
+- **Imágenes:** URLs de Unsplash para cursos
+
+### 6. HTML5 Semántico ✅
+- **Estructura completa:**
+  - `<header>` - Encabezado con navegación
+  - `<nav>` - Menú principal con ARIA labels
+  - `<main>` - Contenido principal
+  - `<section>` - Secciones temáticas (hero, cursos, servicios, etc.)
+  - `<article>` - Contenido independiente (cards de cursos)
+  - `<footer>` - Pie de página con información
+- **Accesibilidad:** ARIA labels en navegación y elementos interactivos
+
+---
+
+## 🚀 Tecnologías Utilizadas
+
+- **HTML5** - Estructura semántica completa
+- **CSS3** - Estilos personalizados y animaciones
+- **Tailwind CSS 3.x** - Framework utility-first para diseño responsive
+- **JavaScript ES6+** - Validación de formulario y menú móvil
+- **Font Awesome 6.5.1** - Iconografía profesional
+- **Google Fonts (Inter)** - Tipografía moderna
 
 ---
 
@@ -19,29 +86,170 @@ Sitio web moderno y responsivo para una plataforma de educación digital, desarr
 
 ```
 Actividad 1 sitio web/
-├── index.html          # Página principal con cursos y servicios
-├── nosotros.html       # Página institucional (historia, misión, valores)
-├── contacto.html       # Página de contacto con formulario funcional
-├── style.css           # Estilos personalizados y animaciones
-├── .gitignore          # Archivos a ignorar en Git
-├── README.md           # Este archivo
-├── docs/               # Documentación
-│   └── DOCUMENTACION.md    # Documentación completa del proyecto
-└── scripts/            # Scripts de utilidad
-    ├── validacion-proyecto.ps1  # Script de validación completa
-    └── subir-github.ps1         # Script para subir a GitHub
+├── index.html          # Página principal (cursos y servicios)
+├── nosotros.html       # Página institucional (valores y equipo)
+├── contacto.html       # Página de contacto con formulario
+├── style.css           # Estilos personalizados
+├── .gitignore          # Archivos ignorados por Git
+└── README.md           # Documentación del proyecto
 ```
 
 ---
 
-## 🌐 Subir a GitHub
+## 📱 Páginas del Sitio
 
-### Opción 1: Usar el Script Automático (Recomendado)
+### 1. index.html - Página Principal
+- Hero section con gradiente y estadísticas animadas
+- Sección de cursos (3 cards responsive)
+- Sección de servicios (6 cards con iconos)
+- 10 Heurísticas de Nielsen
+- Footer con información de contacto
+
+### 2. nosotros.html - Institucional
+- Historia de la empresa
+- Misión y Visión (cards con gradientes)
+- 4 Valores corporativos con iconos
+- Estadísticas con efecto backdrop-blur
+- Call-to-action
+
+### 3. contacto.html - Contacto
+- Formulario con validación JavaScript en tiempo real
+- 5 tarjetas de información de contacto
+- Sección FAQ (4 preguntas)
+- Integración con WhatsApp
+
+---
+
+## ✨ Características Destacadas
+
+### Diseño Responsivo
+- Mobile-first approach
+- 4 breakpoints profesionales
+- Menú hamburguesa funcional con animación
+- Grid adaptable (3→2→1 columnas)
+
+### Experiencia de Usuario (UX)
+- 10 Heurísticas de Nielsen implementadas
+- Feedback visual en todos los elementos interactivos
+- Loading states y mensajes de confirmación
+- Smooth scrolling y transiciones suaves
+- Backdrop-blur en header sticky
+
+### Funcionalidades JavaScript
+- Formulario con validación en tiempo real
+- Menú móvil con toggle animado
+- Mensajes de éxito/error
+- Estados de carga (loading)
+
+---
+
+## 🎨 Sistema de Diseño
+
+### Paleta de Colores
+| Color | Código | Uso |
+|-------|--------|-----|
+| Primary (Azul) | #3b82f6 | Botones principales, enlaces, CTAs |
+| Secondary (Verde) | #10b981 | Mensajes de éxito, confirmaciones |
+| Accent (Naranja) | #f59e0b | Elementos destacados, hover effects |
+
+### Tipografía
+- **Fuente:** Inter (Google Fonts)
+- **Pesos:** 400 (regular), 600 (semibold), 700 (bold)
+- **Uso consistente** en todo el sitio
+
+---
+
+## 🚀 Cómo Visualizar el Proyecto
+
+1. Navega a la carpeta del proyecto
+2. Abre `index.html` en tu navegador
+3. Navega entre las 3 páginas usando el menú
+4. Prueba el diseño responsive (F12 → Device Toolbar)
+5. Completa y envía el formulario en contacto.html
+
+---
+
+## ✅ Cumplimiento de Requisitos
+
+| Requisito | Estado | Implementación |
+|-----------|--------|----------------|
+| Flexbox/Grid | ✅ CUMPLE | Múltiples implementaciones en navegación, cards, footer |
+| Media Queries | ✅ CUMPLE | 4 breakpoints mobile-first |
+| Coherencia Visual | ✅ CUMPLE | Paleta de 3 colores + tipografía Inter |
+| Nueva Sección | ✅ SUPERA | 8 secciones nuevas (requisito: 1) |
+| Iconos/Gráficos | ✅ SUPERA | 30+ iconos Font Awesome (requisito: algunos) |
+| HTML5 Semántico | ✅ CUMPLE | Estructura completa con todas las etiquetas |
+
+---
+
+## 📊 Estadísticas del Proyecto
+
+- **3** páginas HTML completas
+- **30+** iconos Font Awesome
+- **4** breakpoints responsive
+- **8** secciones nuevas
+- **10** heurísticas UX implementadas
+- **3** colores en paleta personalizada
+- **121 KB** tamaño total del proyecto
+
+---
+
+## 👨‍💻 Desarrollo
+
+**Universidad:** UEES  
+**Curso:** Desarrollo de Aplicaciones Web  
+**Periodo:** En Línea 2 - 2026  
+**Actividad:** Actividad 2 - Diseño Responsivo y Estilos Visuales
+
+---
+
+## 📄 Licencia
+
+Proyecto académico desarrollado para la Universidad de Especialidades Espíritu Santo (UEES).
+# Aprende Curso Digital - Sitio Web
+
+## ðŸ“š InformaciÃ³n del Proyecto
+
+**Curso:** Desarrollo de Aplicaciones Web  
+**Universidad:** UEES (Universidad de Especialidades EspÃ­ritu Santo)  
+**Fecha:** Abril 2026  
+**TemÃ¡tica:** Plataforma de EducaciÃ³n Digital Profesional
+
+---
+
+## ðŸ“‹ DescripciÃ³n
+
+Sitio web moderno y responsivo para una plataforma de educaciÃ³n digital, desarrollado con HTML5, CSS3, Tailwind CSS y JavaScript. Implementa las 10 heurÃ­sticas de Nielsen para una experiencia de usuario profesional.
+
+---
+
+## ðŸ“ Estructura del Proyecto
+
+```
+Actividad 1 sitio web/
+â”œâ”€â”€ index.html          # PÃ¡gina principal con cursos y servicios
+â”œâ”€â”€ nosotros.html       # PÃ¡gina institucional (historia, misiÃ³n, valores)
+â”œâ”€â”€ contacto.html       # PÃ¡gina de contacto con formulario funcional
+â”œâ”€â”€ style.css           # Estilos personalizados y animaciones
+â”œâ”€â”€ .gitignore          # Archivos a ignorar en Git
+â”œâ”€â”€ README.md           # Este archivo
+â”œâ”€â”€ docs/               # DocumentaciÃ³n
+â”‚   â””â”€â”€ DOCUMENTACION.md    # DocumentaciÃ³n completa del proyecto
+â””â”€â”€ scripts/            # Scripts de utilidad
+    â”œâ”€â”€ validacion-proyecto.ps1  # Script de validaciÃ³n completa
+    â””â”€â”€ subir-github.ps1         # Script para subir a GitHub
+```
+
+---
+
+## ðŸŒ Subir a GitHub
+
+### OpciÃ³n 1: Usar el Script AutomÃ¡tico (Recomendado)
 ```powershell
 .\scripts\subir-github.ps1
 ```
 
-### Opción 2: Comandos Git Manuales
+### OpciÃ³n 2: Comandos Git Manuales
 ```bash
 git init
 git add .
@@ -51,7 +259,7 @@ git remote add origin https://github.com/PaulMoralesG/Actividad-1-Web.git
 git push -u origin main
 ```
 
-### Opción 3: GitHub Desktop
+### OpciÃ³n 3: GitHub Desktop
 1. Descarga [GitHub Desktop](https://desktop.github.com/)
 2. File > Add Local Repository
 3. Selecciona esta carpeta
@@ -59,89 +267,89 @@ git push -u origin main
 
 ---
 
-## 🚀 Tecnologías Utilizadas
+## ðŸš€ TecnologÃ­as Utilizadas
 
-- **HTML5** - Estructura semántica
+- **HTML5** - Estructura semÃ¡ntica
 - **CSS3** - Estilos base y animaciones
 - **Tailwind CSS 3.x** - Framework CSS utility-first
-- **JavaScript ES6+** - Interactividad y validación
-- **Font Awesome 6.5.1** - Iconografía profesional
-- **Google Fonts (Inter)** - Tipografía moderna
+- **JavaScript ES6+** - Interactividad y validaciÃ³n
+- **Font Awesome 6.5.1** - IconografÃ­a profesional
+- **Google Fonts (Inter)** - TipografÃ­a moderna
 
 ---
 
-## ✨ Características Principales
+## âœ¨ CaracterÃ­sticas Principales
 
-### Diseño Responsivo
+### DiseÃ±o Responsivo
 - Mobile-first approach
 - 4 breakpoints (480px, 768px, 1024px, 1200px+)
-- Menú hamburguesa funcional con overlay
+- MenÃº hamburguesa funcional con overlay
 - CSS Grid y Flexbox
 
 ### Experiencia de Usuario (UX)
-- 10 Heurísticas de Nielsen implementadas
+- 10 HeurÃ­sticas de Nielsen implementadas
 - Feedback visual en elementos interactivos
-- Loading states y mensajes de confirmación
+- Loading states y mensajes de confirmaciÃ³n
 - Smooth scrolling y transiciones suaves
 - Backdrop-blur en header sticky
 
-### Diseño Visual
+### DiseÃ±o Visual
 - Sistema de colores personalizado (Primary/Secondary/Accent)
 - Gradientes modernos
 - Animaciones CSS (blobs, hover effects)
-- Shadows y elevación de componentes
+- Shadows y elevaciÃ³n de componentes
 - 30+ iconos Font Awesome
 
 ### Funcionalidades
-- Formulario de contacto con validación JavaScript
-- Navegación consistente en 3 páginas
+- Formulario de contacto con validaciÃ³n JavaScript
+- NavegaciÃ³n consistente en 3 pÃ¡ginas
 - Enlaces externos (WhatsApp, email)
 - Success/error messages
 - Console logging para debugging
 
 ---
 
-## 🎨 Paleta de Colores
+## ðŸŽ¨ Paleta de Colores
 
 - **Primary (Azul):** #3b82f6 | Para elementos principales y CTAs
-- **Secondary (Verde):** #10b981 | Para elementos de éxito y confirmación
+- **Secondary (Verde):** #10b981 | Para elementos de Ã©xito y confirmaciÃ³n
 - **Accent (Naranja):** #f59e0b | Para destacar elementos especiales
 
 ---
 
-## 📱 Páginas del Sitio
+## ðŸ“± PÃ¡ginas del Sitio
 
-### 1. **index.html** - Página Principal
+### 1. **index.html** - PÃ¡gina Principal
 - Hero section con fondo degradado y animaciones
-- Sección de cursos (3 cards con ratings y badges)
-- Sección de servicios (6 cards con iconos gradient)
-- Estadísticas (estudiantes, cursos, satisfacción)
+- SecciÃ³n de cursos (3 cards con ratings y badges)
+- SecciÃ³n de servicios (6 cards con iconos gradient)
+- EstadÃ­sticas (estudiantes, cursos, satisfacciÃ³n)
 - Call-to-action
 
 ### 2. **nosotros.html** - Institucional
 - Historia de la empresa
-- Misión y Visión en cards con gradientes
+- MisiÃ³n y VisiÃ³n en cards con gradientes
 - 4 Valores corporativos
-- Información del equipo
-- Estadísticas con backdrop-blur
+- InformaciÃ³n del equipo
+- EstadÃ­sticas con backdrop-blur
 - CTA final
 
 ### 3. **contacto.html** - Contacto
-- Formulario funcional con validación JavaScript
-- 5 tarjetas de información de contacto
-- Sección FAQ (4 preguntas frecuentes)
+- Formulario funcional con validaciÃ³n JavaScript
+- 5 tarjetas de informaciÃ³n de contacto
+- SecciÃ³n FAQ (4 preguntas frecuentes)
 - Call-to-action con WhatsApp
 
 ---
 
-## 🚀 Cómo Usar
+## ðŸš€ CÃ³mo Usar
 
 ### Abrir el Proyecto
 1. Navega a la carpeta del proyecto
 2. Abre `index.html` en tu navegador
 
 ### Validar el Proyecto
-Ejecuta el script de verificación:
+Ejecuta el script de verificaciÃ³n:
 ```powershell
 .\scripts\verificacion-final.ps1
 ```
@@ -158,229 +366,42 @@ Ejecuta el script de verificación:
 
 ---
 
-## 📚 Documentación Adicional
+## ðŸ“š DocumentaciÃ³n Adicional
 
-Consulta la carpeta `docs/` para documentación detallada:
-- **MEJORAS_UX_TAILWIND.md** - Análisis de mejoras UX aplicadas
-- **GUIA_EXPOSICION.md** - Guía para presentación académica
+Consulta la carpeta `docs/` para documentaciÃ³n detallada:
+- **MEJORAS_UX_TAILWIND.md** - AnÃ¡lisis de mejoras UX aplicadas
+- **GUIA_EXPOSICION.md** - GuÃ­a para presentaciÃ³n acadÃ©mica
 - **PROYECTO_COMPLETO.md** - Checklist completo del proyecto
-- **COMANDOS_RAPIDOS.md** - Comandos útiles de desarrollo
+- **COMANDOS_RAPIDOS.md** - Comandos Ãºtiles de desarrollo
 
 ---
 
-## ✅ Estado del Proyecto
+## âœ… Estado del Proyecto
 
-**PROYECTO COMPLETO Y LISTO PARA PRESENTACIÓN**
+**PROYECTO COMPLETO Y LISTO PARA PRESENTACIÃ“N**
 
-### Características Implementadas
-✅ Diseño responsivo (mobile-first)  
-✅ Tailwind CSS integrado  
-✅ Font Awesome (30+ iconos)  
-✅ Formulario funcional con validación  
-✅ Navegación móvil con overlay  
-✅ Animaciones CSS  
-✅ 10/10 Heurísticas UX  
-✅ 3 páginas optimizadas  
-✅ Código limpio y organizado  
+### CaracterÃ­sticas Implementadas
+âœ… DiseÃ±o responsivo (mobile-first)  
+âœ… Tailwind CSS integrado  
+âœ… Font Awesome (30+ iconos)  
+âœ… Formulario funcional con validaciÃ³n  
+âœ… NavegaciÃ³n mÃ³vil con overlay  
+âœ… Animaciones CSS  
+âœ… 10/10 HeurÃ­sticas UX  
+âœ… 3 pÃ¡ginas optimizadas  
+âœ… CÃ³digo limpio y organizado  
 
 ---
 
-## 👨‍💻 Desarrollo
+## ðŸ‘¨â€ðŸ’» Desarrollo
 
 **Autor:** Estudiante UEES  
 **Curso:** Desarrollo de Aplicaciones Web  
-**Periodo:** En Línea 2 - 2026  
+**Periodo:** En LÃ­nea 2 - 2026  
 **Semana:** 4
 
 ---
 
-## 📄 Licencia
+## ðŸ“„ Licencia
 
-Proyecto académico desarrollado para la Universidad de Especialidades Espíritu Santo (UEES).
-
----
-
-*Última actualización: Abril 2026*
-- Variables CSS para colores, fuentes y sombras
-- Sistema de colores coherente
-
-#### Sistema de Diseño
-- **Paleta de Colores:**
-  - Primario: Azul (#2563eb)
-  - Secundario: Verde (#10b981)
-  - Acento: Naranja (#f59e0b)
-  - Texto: Gris oscuro (#1f2937)
-
-- **Tipografía:**
-  - Fuente: Segoe UI
-  - Títulos con jerarquía clara
-  - Línea de altura 1.6 para legibilidad
-
-#### Componentes Estilizados
-- Header fijo con sombra
-- Hero sections con gradiente
-- Cards de cursos con hover effects
-- Botones con transiciones
-- Formularios estilizados
-- Footer oscuro con contraste
-
-#### Diseño Responsive
-- **Breakpoints:**
-  - Desktop: > 768px
-  - Tablet: 481px - 768px
-  - Mobile: < 480px
-- Grid system con CSS Grid
-- Flexbox para layouts flexibles
-- Navegación adaptable
-
----
-
-## 🎨 Características de Diseño
-
-### Layout
-- Contenedor máximo de 1200px
-- Padding responsive
-- Secciones espaciadas (4rem)
-
-### Interactividad
-- Efectos hover en enlaces y tarjetas
-- Transiciones suaves (0.3s)
-- Navegación activa destacada
-- Botones con transform al hover
-
-### Accesibilidad
-- Etiquetas semánticas HTML5
-- Alt text en imágenes
-- Labels en formularios
-- Contraste de colores adecuado
-- Navegación por teclado
-
----
-
-## 🚀 Cómo Ver el Sitio
-
-### Opción 1: Abrir Directamente
-1. Navega a la carpeta "Actividad 1 sitio web"
-2. Abre `index.html` en tu navegador web
-3. Navega entre las páginas usando el menú
-
-### Opción 2: Servidor Local con Python
-```bash
-cd "Actividad 1 sitio web"
-python -m http.server 8000
-```
-Luego abre: http://localhost:8000/index.html
-
-### Opción 3: Servidor Local con Node.js
-```bash
-cd "Actividad 1 sitio web"
-npx http-server -p 8000
-```
-Luego abre: http://localhost:8000/index.html
-
----
-
-## 📱 Compatibilidad
-
-- ✅ Chrome (última versión)
-- ✅ Firefox (última versión)
-- ✅ Edge (última versión)
-- ✅ Safari (última versión)
-- ✅ Responsive en dispositivos móviles
-
----
-
-## 🌐 Recursos Externos
-
-### Imágenes
-Todas las imágenes provienen de [Unsplash](https://unsplash.com/) (requiere conexión a internet):
-- Reparación de celulares
-- Marketing Digital
-- Diseño con Resina Epóxica
-
----
-
-## 📝 Validación HTML/CSS
-
-Para validar el código:
-- HTML: https://validator.w3.org/
-- CSS: https://jigsaw.w3.org/css-validator/
-
----
-
-## 🎯 Objetivos de Aprendizaje Alcanzados
-
-1. ✅ Estructura semántica HTML5
-2. ✅ Navegación entre múltiples páginas
-3. ✅ Uso de etiquetas semánticas
-4. ✅ Incorporación de multimedia (imágenes)
-5. ✅ Formularios con validación
-6. ✅ Estilos CSS externos organizados
-7. ✅ Diseño responsive
-8. ✅ Sistema de colores coherente
-9. ✅ Buenas prácticas de código
-
----
-
-## 👨‍💻 Tecnologías Utilizadas
-
-- **HTML5** - Estructura y contenido
-- **CSS3** - Diseño y estilos
-- **CSS Grid** - Layout de tarjetas y grids
-- **CSS Flexbox** - Layout flexible
-- **Media Queries** - Responsive design
-- **Variables CSS** - Sistema de diseño
-- **Formularios HTML5** - Con validación nativa
-
----
-
-## 📚 Contenido del Sitio
-
-### Temática: Educación Digital
-**Aprende Curso Digital** es una plataforma de educación online que ofrece cursos profesionales en:
-- Reparación de Celulares
-- Marketing Digital
-- Diseño con Resina Epóxica
-- Y más áreas profesionales
-
-El sitio presenta:
-- Cursos destacados
-- Beneficios de la plataforma
-- Información corporativa
-- Formulario de contacto
-- Testimonios y estadísticas
-
----
-
-## 📌 Notas Importantes
-
-1. Las imágenes usan URLs de Unsplash y requieren conexión a internet
-2. El formulario es estático (sin backend implementado)
-3. Los enlaces sociales son placeholders (#)
-4. El sitio es completamente funcional en navegación
-5. Todos los archivos son autocontenidos (no requieren dependencias)
-
----
-
-## 🔄 Próximos Pasos (Actividades Futuras)
-
-- Agregar JavaScript para interactividad
-- Implementar backend para el formulario
-- Agregar más páginas (cursos individuales)
-- Integrar base de datos
-- Implementar sistema de usuarios
-- Agregar más animaciones y efectos
-
----
-
-## ✉️ Contacto del Proyecto
-
-Este es un proyecto académico para la materia de Desarrollo de Aplicaciones Web.
-
-**Sitio Web de Ejemplo:** Aprende Curso Digital  
-**Fecha de Entrega:** Semana 4  
-**Estado:** ✅ Completo
-
----
-
-**© 2026 - Actividad 1: Estructura Base de un Sitio Web**
+Proyecto acadÃ©mico desarrollado para la Universidad de Especialidades EspÃ­ritu Santo (UEES).
