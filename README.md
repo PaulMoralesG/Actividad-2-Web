@@ -130,7 +130,9 @@ Sitio web moderno y completamente responsivo para una plataforma de educación d
 
 ### 4️⃣ Nuevas Secciones Añadidas ✅ SUPERADO (8/1)
 
-**Se requería 1 sección nueva, se implementaron 8:**
+**Requisito:** Agregar al menos una sección nueva (por ejemplo: portafolio, servicios o galería).
+
+**Cumplimiento:** Se implementó la sección de **Servicios** (requisito cumplido) + 7 secciones adicionales = **8 secciones nuevas totales**
 
 #### En index.html (Página Principal):
 1. ✅ **Sección Hero Principal**
@@ -444,7 +446,7 @@ p  { font-size: 1rem; font-weight: 400; }    /* Cuerpo */
 | 3 | **4+ Media Queries** | ✅ CUMPLE | 4 breakpoints (480px, 768px, 1024px, 1200px) | style.css líneas 168-230 |
 | 4 | **Paleta 3 Colores** | ✅ CUMPLE | Azul (#3b82f6), Verde (#10b981), Naranja (#f59e0b) | Variables CSS |
 | 5 | **Coherencia Visual** | ✅ CUMPLE | Tipografía Inter, espaciado consistente | Todas las páginas |
-| 6 | **1+ Sección Nueva** | ✅ SUPERA | 8 secciones nuevas (requisito: 1) | Ver sección 4 |
+| 6 | **1+ Sección Nueva** (portafolio, servicios o galería) | ✅ SUPERA | Servicios + 7 secciones adicionales = 8 totales | Ver sección 4 |
 | 7 | **Iconos/Gráficos** | ✅ SUPERA | 30+ iconos Font Awesome | Todas las páginas |
 | 8 | **HTML5 Semántico** | ✅ CUMPLE | `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` | Estructura completa |
 
@@ -801,7 +803,7 @@ Actividad 1 sitio web/
 | Flexbox/Grid | ✅ CUMPLE | Múltiples implementaciones en navegación, tarjetas, pie de página |
 | Media Queries | ✅ CUMPLE | 4 puntos de interrupción móvil primero |
 | Coherencia Visual | ✅ CUMPLE | Paleta de 3 colores + tipografía Inter |
-| Nueva Sección | ✅ SUPERA | 8 secciones nuevas (requisito: 1) |
+| Nueva Sección (portafolio, servicios o galería) | ✅ SUPERA | Servicios + 7 adicionales = 8 secciones totales |
 | Iconos/Gráficos | ✅ SUPERA | 30+ iconos Font Awesome (requisito: algunos) |
 | HTML5 Semántico | ✅ CUMPLE | Estructura completa con todas las etiquetas |
 
