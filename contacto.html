@@ -40,13 +40,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-sans">
-    <!-- Overlay para el menú móvil -->
-    <div id="navOverlay" class="nav-overlay"></div>
-
     <!-- ESTRUCTURA: HEADER (Encabezado) -->
     <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-lg z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-20 relative">
                 <div class="flex items-center space-x-3">
                     <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-lg">
                         <i class="fas fa-graduation-cap text-white text-2xl"></i>
@@ -55,7 +52,10 @@
                         Aprende Curso Digital
                     </h1>
                 </div>
-                <button class="nav-toggle lg:hidden" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <button class="nav-toggle lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+                        id="navToggle" 
+                        aria-label="Menú de navegación" 
+                        aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
                 <nav id="mainNav" class="hidden lg:flex">
@@ -433,42 +433,35 @@
     </footer>
 
     <script>
-        // Toggle navigation menu
+        // Simple mobile menu toggle
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
-        const navOverlay = document.getElementById('navOverlay');
 
-        function toggleMenu() {
-            navToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', 
-                navToggle.classList.contains('active'));
-            document.body.style.overflow = navToggle.classList.contains('active') ? 'hidden' : '';
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', function() {
+                const isActive = mainNav.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isActive);
+            });
+
+            // Close menu when clicking on a link
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Close menu when resizing to desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    mainNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         }
-
-        function closeMenu() {
-            navToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            navOverlay.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        navToggle.addEventListener('click', toggleMenu);
-        navOverlay.addEventListener('click', closeMenu);
-
-        // Close menu when clicking on a link
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu when window is resized to desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
-                closeMenu();
-            }
-        });
 
         // Add scroll effect to header
         const header = document.querySelector('header');

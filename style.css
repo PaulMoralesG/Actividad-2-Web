@@ -165,92 +165,58 @@ ul {
     bottom: 0;
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Simplified */
 @media (max-width: 1023px) {
     .nav-toggle {
         display: block;
     }
 
     nav#mainNav {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
         right: 0;
-        height: 100vh;
-        width: 280px;
         background: #ffffff;
-        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
-        transform: translateX(100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1100;
-        padding-top: 80px;
-        overflow-y: auto;
-        pointer-events: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
     }
 
     nav#mainNav.active {
-        display: block;
-        transform: translateX(0);
-        pointer-events: auto;
+        max-height: 500px;
+        opacity: 1;
     }
 
     nav#mainNav ul {
         flex-direction: column;
-        align-items: stretch;
-        padding: 1.5rem 1rem;
-        gap: 0.75rem;
+        padding: 1rem;
+        gap: 0.5rem;
     }
 
     nav#mainNav ul li {
-        position: relative;
-        z-index: 1;
+        width: 100%;
     }
 
     nav#mainNav ul li a {
-        width: 100%;
-        justify-content: flex-start;
-        padding: 1rem 1.25rem;
-        border-radius: 0.75rem;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: all 0.2s ease;
         display: flex;
-        position: relative;
-        z-index: 2;
-        cursor: pointer;
-        pointer-events: auto;
+        align-items: center;
+        width: 100%;
+        padding: 0.875rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.2s ease;
     }
 
     nav#mainNav ul li a:hover {
+        background-color: #f3f4f6;
         transform: translateX(4px);
     }
 
     nav#mainNav ul li a.active {
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    }
-}
-
-/* Overlay for mobile menu */
-.nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1050;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.nav-overlay.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        background: linear-gradient(to right, #3b82f6, #2563eb);
+        color: white;
     }
 }
 

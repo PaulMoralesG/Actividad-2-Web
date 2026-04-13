@@ -66,7 +66,7 @@
     <!-- ESTRUCTURA: HEADER (Encabezado) -->
     <header class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-white/95 transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
+            <div class="flex justify-between items-center py-4 relative">
                 <div class="logo flex items-center space-x-3 group">
                     <div class="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-xl shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
                         <i class="fas fa-graduation-cap text-white text-2xl"></i>
@@ -78,7 +78,7 @@
                 
                 <button class="nav-toggle lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
                         id="navToggle" 
-                        aria-label="Toggle navigation"
+                        aria-label="Menú de navegación"
                         aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
@@ -113,9 +113,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- TODO: RESPONSIVE DESIGN - 4 Breakpoints: 480px, 768px, 1024px, 1200px -->
     <!-- ESTRUCTURA: MAIN (Contenido Principal) -->
@@ -534,45 +531,35 @@
     </footer>
 
     <script>
-        // Toggle navigation menu
+        // Simple mobile menu toggle
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
-        const navOverlay = document.getElementById('navOverlay');
 
-        function toggleMenu() {
-            navToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', 
-                navToggle.classList.contains('active'));
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = navToggle.classList.contains('active') ? 'hidden' : '';
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', function() {
+                const isActive = mainNav.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isActive);
+            });
+
+            // Close menu when clicking on a link
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Close menu when resizing to desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    mainNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         }
-
-        function closeMenu() {
-            navToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            navOverlay.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        navToggle.addEventListener('click', toggleMenu);
-        navOverlay.addEventListener('click', closeMenu);
-
-        // Close menu when clicking on a link
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu when window is resized to desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
-                closeMenu();
-            }
-        });
-
         // Add scroll effect to header
         let lastScroll = 0;
         const header = document.querySelector('header');
